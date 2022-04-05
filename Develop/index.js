@@ -35,7 +35,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Please choose a license for your project',
-        choices: ['none', 'none(derogatory)'],
+        choices: ['none', 'none(derogatory)', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
         default: 0
     },
     {
@@ -58,7 +58,45 @@ const questions = [
         name: 'tests',
         message: 'Go the extra mile and write tests for your application. Then provide examples on how to run them here.'
     },
+    {
+        type: 'input',
+        name: 'github',
+        message: "Enter your Github username so people know it's yours!",
+        validate: gitHub => {
+            if (gitHub) {
+                return true
+            } else {
+                console.log('You must enter your Github!');
+                return false
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter your email so people can contact you!',
+        validate: userEmail => {
+            if (userEmail) {
+                return true
+            } else {
+                console.log('You must enter your email!');
+                return false
+            }
+        }
+    }
 ];
+
+const mockData = {
+    title: 'RunBuddy',
+    description: 'A Website for Runners',
+    license: 'none',
+    installation: 'none',
+    usage: 'Use within a web browser to sign up for a Run Buddy!',
+    contribution: '',
+    tests: '',
+    github: 'Lernatino',
+    email: 'lernatino@gmail.com'
+};
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
@@ -71,7 +109,6 @@ function init() {
 // Function call to initialize app
 init()
   .then(readMeData => {
-      console.log(readMeData);
       return generateMarkdown(readMeData);
   })
   .then(markdown => {
