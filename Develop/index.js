@@ -35,7 +35,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Please choose a license for your project',
-        choices: ['none', 'none(derogatory)', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
+        choices: ['none', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
         default: 0
     },
     {
@@ -89,11 +89,11 @@ const questions = [
 const mockData = {
     title: 'RunBuddy',
     description: 'A Website for Runners',
-    license: 'none',
+    license: 'Boost Software License 1.0',
     installation: 'none',
     usage: 'Use within a web browser to sign up for a Run Buddy!',
-    contribution: '',
-    tests: '',
+    contribution: 'none',
+    tests: 'none',
     github: 'Lernatino',
     email: 'lernatino@gmail.com'
 };
@@ -109,7 +109,8 @@ function init() {
 // Function call to initialize app
 init()
   .then(readMeData => {
-      return generateMarkdown(readMeData);
+      console.log(mockData);
+      return generateMarkdown(mockData);
   })
   .then(markdown => {
       console.log(markdown);
