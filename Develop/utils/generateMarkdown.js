@@ -53,7 +53,7 @@ function renderLicenseSection(license) {
     return ''
   } else {
     return `## License
-
+    
     Licensed under the ${renderLicenseLink(license)} license.
     `;
   }
