@@ -1,11 +1,13 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+const writeFile = require('./utils/writeAndCopyFile.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
-        name: 'name',
+        name: 'title',
         message: 'What is the name of your project?',
         validate: projectName => {
             if(projectName) {
@@ -32,8 +34,8 @@ const questions = [
     {
         type: 'list',
         name: 'license',
-        message: 'Provide instructions and examples for use.',
-        choices: ['none', ''],
+        message: 'Please choose a license for your project',
+        choices: ['none', 'none(derogatory)'],
         default: 0
     },
     {
@@ -62,7 +64,19 @@ const questions = [
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    return inquirer.prompt(questions);
+}
 
 // Function call to initialize app
-init();
+init()
+  .then(readMeData => {
+      console.log(readMeData);
+      return generateMarkdown(readMeData);
+  })
+  .then(markdown => {
+      console.log(markdown);
+  })
+  .catch(err => {
+      console.log(err);
+  });
