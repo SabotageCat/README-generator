@@ -4,7 +4,7 @@ function renderLicenseBadge(license) {
   if (license == 'none') {
     return ''
   } else {
-    return `[![License](https://img.shields.io/badge/License-${license.split(' ').join('%20')}-green)](#License)`
+    return `[![License](https://img.shields.io/badge/License-${license.split(' ').join('%20')}-green)](#license)`
   }
 };
 
@@ -52,9 +52,11 @@ function renderLicenseSection(license) {
   if (license == 'none') {
     return ''
   } else {
-    return `## License
-    
-    Licensed under the ${renderLicenseLink(license)} license.
+    return `
+  <a name='license'></a>
+  ## License
+
+  Licensed under the ${renderLicenseLink(license)} license.
     `;
   }
   
@@ -70,25 +72,31 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## Table of Contents
+  1. [Installation](#installation)
+  2. [Usage](#usage)
+  3. [Contribute](#contributions)
+  4. [Tests](#tests)
+  5. [Questions](#questions)
 
+  <a name='installation'></a>
   ## Installation
 
   ${data.installation}
-
+  <a name='usage'></a>
   ## Usage
 
   ${data.usage}
 
   ${renderLicenseSection(data.license)}
-
+  <a name='contributions'></a>
   ## How to Contribute
 
   ${data.contribution}
-
+  <a name='tests'></a>
   ## Tests
 
   ${data.tests}
-
+  <a name='questions'></a>
   ## Questions
 
   For any questions about this project, reach me @ https://github.com/${data.github} || ${data.email}
