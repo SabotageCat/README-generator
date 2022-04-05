@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const writeFile = require('./utils/writeAndCopyFile.js');
+const writeFile = require('./utils/writeFile.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -114,6 +114,7 @@ init()
   })
   .then(markdown => {
       console.log(markdown);
+      return writeFile(markdown)
   })
   .catch(err => {
       console.log(err);
