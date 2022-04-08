@@ -86,17 +86,17 @@ const questions = [
     }
 ];
 
-const mockData = {
-    title: 'RunBuddy',
-    description: 'A Website for Runners',
-    license: 'Boost Software License 1.0',
-    installation: 'none',
-    usage: 'Use within a web browser to sign up for a Run Buddy!',
-    contribution: 'none',
-    tests: 'none',
-    github: 'Lernatino',
-    email: 'lernatino@gmail.com'
-};
+// const mockData = {
+//     title: 'RunBuddy',
+//     description: 'A Website for Runners',
+//     license: 'Boost Software License 1.0',
+//     installation: 'none',
+//     usage: 'Use within a web browser to sign up for a Run Buddy!',
+//     contribution: 'none',
+//     tests: 'none',
+//     github: 'Lernatino',
+//     email: 'lernatino@gmail.com'
+// };
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
@@ -109,8 +109,8 @@ function init() {
 // Function call to initialize app
 init()
   .then(readMeData => {
-      console.log(mockData);
-      return generateMarkdown(mockData);
+      console.log(readMeData);
+      return generateMarkdown(readMeData);
   })
   .then(markdown => {
       console.log(markdown);
