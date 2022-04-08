@@ -1,9 +1,9 @@
-# RunBuddy
-  [![License](https://img.shields.io/badge/License-Boost%20Software%20License%201.0-green)](#license)
+# README Generator
+  [![License](https://img.shields.io/badge/License-MIT%20License-green)](#license)
 
   ## Description
 
-  A Website for Runners
+  This project creates a README.md with the user input provided. I build this to create an easier and streamlined way of creating READMEs for my future prrojects. It works by having the inquirer npm prompt the user for all the necessary information and then inputs the data into a template-literal. That template is then written into an actual file into the dist directory using the fs.write method in node.js.
 
   ## Table of Contents
   1. [Installation](#installation)
@@ -15,29 +15,29 @@
   <a name='installation'></a>
   ## Installation
 
-  none
+  First you'll need to install node.js on your local machine. Then you'll need to install the dependencies using npm install. After the dependencies have installed call the program with 'node index.js'.
   <a name='usage'></a>
   ## Usage
 
-  Use within a web browser to sign up for a Run Buddy!
+  To use the README Generator call the program from the command line by using 'node index.js'. Then fill out the questions as prompted and then check the 'dist' directory for your generated README.md
 
   
   <a name='license'></a>
   ## License
 
-  Licensed under the [Boost Software License 1.0](https://choosealicense.com/licenses/bsl-1.0/) license.
+  Licensed under the [MIT License](https://choosealicense.com/licenses/mit/) license.
     
   <a name='contributions'></a>
   ## How to Contribute
 
-  none
+  Please be kind and respectful.
   <a name='tests'></a>
   ## Tests
 
-  none
+  There are no tests provided for this application.
   <a name='questions'></a>
   ## Questions
 
-  For any questions about this project, reach me @ https://github.com/Lernatino || lernatino@gmail.com
+  For any questions about this project, reach me @ https://github.com/SabotageCat || robert.gonzo13@yahoo.com
 
   
