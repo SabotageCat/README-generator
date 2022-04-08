@@ -21,6 +21,7 @@
 
   To use the README Generator call the program from the command line by using 'node index.js'. Then fill out the questions as prompted and then check the 'dist' directory for your generated README.md
 
+https://user-images.githubusercontent.com/95665563/162519340-a50fc045-24ac-4a1a-9c6a-d34e7e2562e8.mp4
   
   <a name='license'></a>
   ## License
